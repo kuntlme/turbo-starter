@@ -16,6 +16,16 @@
     "dev": {
       "cache": false,
       "persistent": true
-    }
+    },
+    "db:generate": {
+      "cache": true,
+      "inputs": ["prisma/schema.prisma", "prisma/migrations/**/*.sql"],
+      "outputs": ["node_modules/.prisma/**"],
+      "env": ["DATABASE_URL"]
+    },
+    "db:push": {"cache": false, "env": ["DATABASE_URL"]},
+    "db:migrate:dev": {"cache": false, "env": ["DATABASE_URL"]},
+    "db:migrate:deploy": {"cache": false, "env": ["DATABASE_URL"]},
+    "db:studio": {"cache": false, "env": ["DATABASE_URL"]}
   }
 }
